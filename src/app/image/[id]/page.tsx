@@ -3,7 +3,7 @@ import { images } from "../data";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export default async function ImageDetail({ params }: { params: { id: string } }) {
+export default async function ImageDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const image = images.find((img) => img.id === id);
 
