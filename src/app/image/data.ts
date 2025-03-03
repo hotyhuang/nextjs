@@ -6,19 +6,5 @@ export interface ImageItem {
   alt: string;
 }
 
-export const images: ImageItem[] = [
-  {
-    id: "next-logo",
-    title: "Next.js Logo",
-    description: "The iconic logo of the Next.js framework",
-    src: "/next.svg",
-    alt: "Next.js logo"
-  },
-  {
-    id: "vercel-logo",
-    title: "Vercel Logo",
-    description: "The logo of Vercel, the company behind Next.js",
-    src: "/vercel.svg",
-    alt: "Vercel logo"
-  }
-]; 
+// This file now just defines the type
+// The actual data is in the actions.ts file 
