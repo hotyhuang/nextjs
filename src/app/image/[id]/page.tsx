@@ -40,14 +40,15 @@ async function ImageDetail({ id }: { id: string }) {
   );
 }
 
-export default function ImageDetailPage({ params }: { params: { id: string } }) {
+export default async function ImageDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const {id} = await params;
   return (
     <div className="min-h-screen p-8">
       <Link href="/image" className="text-blue-500 hover:underline mb-4 block">
         ← Back to Gallery
       </Link>
       <Suspense fallback={<ImageDetailSkeleton />}>
-        <ImageDetail id={params.id} />
+        <ImageDetail id={id} />
       </Suspense>
     </div>
   );
